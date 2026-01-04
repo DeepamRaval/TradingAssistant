@@ -174,10 +174,7 @@ print("Final Signal:", decision)
 # Only call Gemini if we have real data (not demo)
 if successful_symbol != "DEMO_DATA":
     # Initialize Gemini client with API key
-    GEMINI_API_KEY = os.getenv("GOOGLE_API_KEY", "AIzaSyAVyNZR_h6RL8rVFJNY7FbqB0xIq6NxNzQ")
-    if not GEMINI_API_KEY:
-        print("Warning: GOOGLE_API_KEY environment variable not set. Using default key.")
-        GEMINI_API_KEY = "AIzaSyAVyNZR_h6RL8rVFJNY7FbqB0xIq6NxNzQ"
+    GEMINI_API_KEY = os.getenv("GOOGLE_API_KEY")
     
     client = genai.Client(api_key=GEMINI_API_KEY)
     
